@@ -90,7 +90,6 @@ function repeater(){
         if (i>=14){
             num = [Math.floor(Math.random() * numbersArr.length) +1];
             flasher==0
-            // buttonClassesArray
             for (let btn of buttonClassesArray) {
                 $(btn).css('background-color', 'lightsteelblue')
             }

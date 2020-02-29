@@ -4,15 +4,15 @@
 
 document.getElementById("display-area").innerHTML = "00:00:00.000";
 
-const bkgMusic = new Audio("assets/mp3/music.mp3")
-const click = new Audio("assets/mp3/click.mp3")
-const bleep = new Audio("assets/mp3/98.mp3")
-const dawarn = new Audio("assets/mp3/dawarn.mp3")
-const warn = new Audio("assets/mp3/warning.mp3")
-const k1 = new Audio("assets/mp3/kbd1.mp3")
-const k2 = new Audio("assets/mp3/kbd2.mp3")
-const k3 = new Audio("assets/mp3/kbd3.mp3")
-const k4 = new Audio("assets/mp3/kbd4.mp3")
+const bkgMusic = new Audio("mp3/music.mp3")
+const click = new Audio("mp3/click.mp3")
+const bleep = new Audio("mp3/98.mp3")
+const dawarn = new Audio("mp3/dawarn.mp3")
+const warn = new Audio("mp3/warning.mp3")
+const k1 = new Audio("mp3/kbd1.mp3")
+const k2 = new Audio("mp3/kbd2.mp3")
+const k3 = new Audio("mp3/kbd3.mp3")
+const k4 = new Audio("mp3/kbd4.mp3")
 
 $(".status").text("LISTENING")
 $(".status").css("color", "green")
@@ -29,7 +29,9 @@ const numbersArr = [1,2,3,4,5,6,7,8,9,10,11,12]
 let warning = false;
 let isCorrect = false;
 let gameWin=false;
-let popUp = 0
+let popUp = 0;
+
+const buttonClassesArray = document.querySelectorAll("button.waves-effect");
 
 //////////////
 /// CLOCK ////

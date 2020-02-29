@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <title>Buttons Test</title>
         <!-- <script src="materialize.min.js"></script> -->
-        <link rel="stylesheet" href="assets/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/materialize.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="dns-prefetch" href="//code.jquery.com">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+        <script src="assets/js/materialize.min.js"></script>   
     </head>
 
     <body>
@@ -18,9 +18,16 @@
             <div id="Progress_Status" style="display: inline-block;"> 
                 <div id="myprogressBar"></div> 
             </div>
-            <div>
-                <br><output id="display-area" class="elapsedT"></output>
-            </div>
+            
+            <!-- <div class="card-panel"> -->
+                <div>
+                    <br><output id="display-area" class="elapsedT"></output>
+                </div>
+                <div>
+                    <!-- <button id="toggle-button" onClick="start()">Start</button>
+                    <button id="toggle-button" onClick="stop()">Stop</button>
+                    <button id="reset-button" onClick="reset()">Reset</button> -->
+                </div>
 
             <div class="row" style="font-size: 24px;">
                 <span><b>STATUS:</b></span>
@@ -48,7 +55,7 @@
             <div class="container row">
                 <button class="primary go" id="go" style="margin: 25px; padding:35px; font-size: 48px;">GO</button>
             </div>
-            <!-- <p>
+            <p>
             <span id="chargingStatus" style="font-family: Helvetica, sans-serif; font-size: 36px;"><span style="color:green;">Charging</span></span></p>
             <div id="battery" style="border: 1px solid #000; display: inline-block; width: 200px;">
                 <div id="batteryLevel"
@@ -61,13 +68,13 @@
                     100%
                     </div>
             </div>
-             -->
+            
         </main>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/main.js"></script>
-    <script src="assets/controls.js"></script>
-    <script src="assets/view.js"></script>
+    <script src="main.js"></script>
+    <script src="assets/js/controls.js"></script>
+    <script src="assets/js/view.js"></script>
     </body>
 
 </html>

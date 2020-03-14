@@ -2,6 +2,31 @@
 // VARIABLES ////
 /////////////////
 
+
+// EXAMPLE JS ///
+var synonyms, items;
+synonyms = {
+"Swift": "JavaScript",
+"JavaScript": "Swift"
+};
+items = ["Swift", "JavaScript"];
+// Looping an array
+for (var item in items) {
+console.log("Item: " + item);
+}
+// Looping a dictionary
+for (var word in synonyms) {
+console.log("The synonym of " + word + " is " + synonyms[word]);
+}
+function sayHello(personName) {
+var greeting = "Hello, " + personName + "!";
+return greeting;
+}
+var message = sayHello("Ammar");
+console.log(message);
+
+
+
 document.getElementById("display-area").innerHTML = "00:00:00.000";
 
 const bkgMusic = new Audio("mp3/music.mp3")
@@ -38,11 +63,11 @@ const buttonClassesArray = document.querySelectorAll("button.waves-effect");
 //////////////
        
 function clockRunning(){
-    var currentTime = new Date()
-        timeElapsed = new Date(currentTime - timeBegan - stoppedDuration),
-        hour = timeElapsed.getUTCHours(),
-        min = timeElapsed.getUTCMinutes(),
-        sec = timeElapsed.getUTCSeconds(),
+    var currentTime = new Date();
+        timeElapsed = new Date(currentTime - timeBegan - stoppedDuration);
+        hour = timeElapsed.getUTCHours();
+        min = timeElapsed.getUTCMinutes();
+        sec = timeElapsed.getUTCSeconds();
         ms = timeElapsed.getUTCMilliseconds();
     document.getElementById("display-area").innerHTML = 
     (hour > 9 ? hour : "0" + hour) + ":" + 
@@ -69,4 +94,10 @@ if (seconds == 0) {clearInterval(started);
     stoppedDuration == 0;
     timeBegan = null;
     timeStopped = null;
-    document.getElementById("display-area").innerHTML = "00:01:20.000";}  
+    document.getElementById("display-area").innerHTML = "00:01:20.000"}
+
+// function pixiInit() {
+//     console.log("init() successfully called.");		
+//     stage = new PIXI.Container();
+//     }
+// pixiInit();

@@ -5,39 +5,38 @@
 function christmas(){
 
 for (let btn of buttonClassesArray) {
-    $(btn).css('background-color', 'lightsteelblue')
+    $(btn).css('background-color', 'lightsteelblue');
 }
-var rand1 = Math.floor(Math.random() * 3)
-var rand2 = Math.floor(Math.random() * 3)
-$("."+num).css('background-color', 'lightsteelblue')
-    if (rand1==1){              
-    $(".1").css('background-color', 'white')}
-    if (rand2==3 || rand1==1){              
+var rand1 = Math.floor(Math.random() * 3);
+var rand2 = Math.floor(Math.random() * 3);
+$("."+num).css('background-color', 'lightsteelblue');
+    if (rand1==1){
+    $(".1").css('background-color', 'white')};
+    if (rand2==3 || rand1==1){
     $(".2").css('background-color', 'white')}
-    if (rand1==2){              
+    if (rand1==2){
     $(".3").css('background-color', 'white')}
-    if (rand2==1 || rand2==2){              
+    if (rand2==1 || rand2==2){
     $(".4").css('background-color', 'white')}
-    if (rand1==3){              
+    if (rand1==3){ 
     $(".5").css('background-color', 'white')}
-    if (rand2==1 || rand1==3){              
+    if (rand2==1 || rand1==3){
     $(".6").css('background-color', 'white')}
-    if (rand1==2 || rand2==1){              
+    if (rand1==2 || rand2==1){
     $(".7").css('background-color', 'white')}
-    if (rand2==3 || rand1==2){              
+    if (rand2==3 || rand1==2){
     $(".8").css('background-color', 'white')}
-    if (rand1==1 || rand2==3){              
+    if (rand1==1 || rand2==3){
     $(".9").css('background-color', 'white')}
-    if (rand2==2 || rand1==1){              
+    if (rand2==2 || rand1==1){
     $(".10").css('background-color', 'white')}
-    if (rand1==3 || rand2==2){              
+    if (rand1==3 || rand2==2){
     $(".11").css('background-color', 'white')}
-    if (rand2==1 || rand1==3){              
+    if (rand2==1 || rand1==3){
     $(".12").css('background-color', 'white')}
     if (isCorrect==true){score++/1.5}
     console.log(score)
 }
-
 
 //////////////
 // BATTERY ///
@@ -45,10 +44,8 @@ $("."+num).css('background-color', 'lightsteelblue')
     
 if(navigator.getBattery) {
     navigator.getBattery().then(function(battery) {
-
     console.warn("Battery charging: ", battery.charging);
     console.warn("Initial battery level: ", battery.level);
-
     var node = document.getElementById("batteryLevel");
     var change = function(e) {
         console.warn("Battery level change: ", battery.level);
@@ -69,7 +66,6 @@ if(navigator.getBattery) {
         console.warn("Battery discharging time change: ", battery.dischargingTime);
     }, false);
     battery.addEventListener("levelchange", change, false);
-
     change();
     chargeChange();
         

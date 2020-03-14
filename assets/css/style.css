@@ -12,6 +12,12 @@ html, body {
     hue 10s linear infinite, fadeIn ease 20s;
     }
 
+#chargingStatus {
+    margin: 25px;
+    padding:35px;
+    font-size: 48px;
+}
+
 #Progress_Status { 
   width: 50%; 
   background-color: #ddd; 

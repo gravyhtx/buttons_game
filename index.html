@@ -1,80 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Buttons Test</title>
-        <!-- <script src="materialize.min.js"></script> -->
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/materialize.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="dns-prefetch" href="//code.jquery.com">
-        <script src="assets/js/materialize.min.js"></script>   
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
 
-    <body>
+    <title>Buttons Test</title>
 
-        <main style="text-align: center;">
-            <br>
-            <div id="Progress_Status" style="display: inline-block;"> 
-                <div id="myprogressBar"></div> 
-            </div>
-            
-            <!-- <div class="card-panel"> -->
-                <div>
-                    <br><output id="display-area" class="elapsedT"></output>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/materialize.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+
+    <script src="assets/js/materialize.min.js"></script> 
+    <script src="assets/js/pixi.min.js"></script>
+
+    <link rel="dns-prefetch" href="//code.jquery.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+</head>
+<body>
+
+    <main style="text-align: center;">
+        <br>
+        <div id="Progress_Status" style="display: inline-block;"> 
+            <div id="myprogressBar"></div> 
+        </div>
+        <div>
+            <br><output id="display-area" class="elapsedT"></output>
+        </div>
+        <div class="row" style="font-size: 24px;">
+            <span><b>STATUS:</b></span>
+            <span class="status"></span>
+        </div>
+        <div class="container row">
+            <button class="waves-effect 1">1</button>
+            <button class="waves-effect 2">2</button>
+            <button class="waves-effect 3">3</button>
+            <button class="waves-effect 4">4</button>
+            <button class="waves-effect 5">5</button>
+        </div>
+        <div class="container row">
+            <button class="waves-effect 6">6</button>                      
+            <button class="waves-effect 7">7</button>
+            <button class="waves-effect 8">8</button>
+            <button class="waves-effect 9">9</button>
+        </div>
+        <div class="container row">
+            <button class="waves-effect 10">10</button>
+            <button class="waves-effect 11">11</button>
+            <button class="waves-effect 12">12</button>
+        </div>
+        <div class="container row">
+            <button class="primary go" id="go" style="margin: 25px; padding:35px; font-size: 48px;">GO</button>
+        </div>
+        <p>
+        <span id="chargingStatus" style="color:green;">Charging</span></p>
+        <div id="battery" style="border: 1px solid #000; display: inline-block; width: 200px;">
+            <div id="batteryLevel"
+                style="min-height: 30px;
+                font-size: 60px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center; color: rgb(0, 0, 0);
+                background: rgb(221, 221, 221);
+                width: 100%;">
+                100%
                 </div>
-                <div>
-                    <!-- <button id="toggle-button" onClick="start()">Start</button>
-                    <button id="toggle-button" onClick="stop()">Stop</button>
-                    <button id="reset-button" onClick="reset()">Reset</button> -->
-                </div>
-
-            <div class="row" style="font-size: 24px;">
-                <span><b>STATUS:</b></span>
-                <span class="status"></span>
-            </div>
-            
-            <div class="container row">
-                <button class="waves-effect 1">1</button>
-                <button class="waves-effect 2">2</button>
-                <button class="waves-effect 3">3</button>
-                <button class="waves-effect 4">4</button>
-                <button class="waves-effect 5">5</button>
-            </div>
-            <div class="container row">
-                <button class="waves-effect 6">6</button>                      
-                <button class="waves-effect 7">7</button>
-                <button class="waves-effect 8">8</button>
-                <button class="waves-effect 9">9</button>
-            </div>
-            <div class="container row">
-                <button class="waves-effect 10">10</button>
-                <button class="waves-effect 11">11</button>
-                <button class="waves-effect 12">12</button>
-            </div>
-            <div class="container row">
-                <button class="primary go" id="go" style="margin: 25px; padding:35px; font-size: 48px;">GO</button>
-            </div>
-            <p>
-            <span id="chargingStatus" style="font-family: Helvetica, sans-serif; font-size: 36px;"><span style="color:green;">Charging</span></span></p>
-            <div id="battery" style="border: 1px solid #000; display: inline-block; width: 200px;">
-                <div id="batteryLevel"
-                    style="min-height: 30px;
-                    font-size: 60px;
-                    font-family: Arial, Helvetica, sans-serif;
-                    text-align: center; color: rgb(0, 0, 0);
-                    background: rgb(221, 221, 221);
-                    width: 100%;">
-                    100%
-                    </div>
-            </div>
-            
-        </main>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="main.js"></script>
+        </div>
+    </main>
+    <!--///////////////// PIXI TEST /////////////////-->
+        <!-- <script type="text/javascript">
+            let type = "WebGL"
+            if(!PIXI.utils.isWebGLSupported()){
+                type = "canvas"
+            } PIXI.utils.sayHello(type)
+        </script> -->
+    <!--///////////////// PIXI TEST /////////////////-->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/controls.js"></script>
     <script src="assets/js/view.js"></script>
-    </body>
-
+</body>
 </html>

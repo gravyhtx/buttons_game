@@ -1,8 +1,6 @@
 //////////////
 /// START ////
 //////////////
-     
-
 
 $(".go").click(function (){
 
@@ -31,8 +29,6 @@ $(".go").click(function (){
         dawarn.play();
         warning =true
     }
-
-    console.log(popRand)
     
     if (seconds <= 0 || gameWin == true){
 
@@ -41,9 +37,7 @@ $(".go").click(function (){
         timeBegan = null;
         timeStopped = null;
         document.getElementById("display-area").innerHTML = "00:01:20.000";
-
-        seconds=0
-
+        seconds=0;
         if (score>=100) {alert("YOU WIN!")}
         else {alert("YOU LOSE!")}
         $(".waves-effect").attr("disabled", true);   
@@ -51,22 +45,18 @@ $(".go").click(function (){
     } 
     if (warning==true) {
         alert("WARNING! Unauthorized user detected!");
-        popUp=0
+        popUp=0;
     };
-        warning=false
-        console.log(seconds)
+        warning=false;
     }, 1000);
-setTimeout(repeater,5)
+setTimeout(repeater,5);
 })
 
 //////////////
 // REPEATER //
 //////////////
-                
-function repeater(){
 
-    console.log(score)
-    console.log(gameWin)
+function repeater(){
     
     isCorrect = false;
     if (score <= 33) {$("#myprogressBar").css('background-color', 'red')}
@@ -76,44 +66,41 @@ function repeater(){
         $("#myprogressBar").css('background-color', 'blue')
         $("#myprogressBar").width('100%')
     }
-    
-    let flasher = Math.floor(Math.random() * 9)
+    let flasher = Math.floor(Math.random() * 9);
     let flashInt = setInterval(flashTimer, 150);
     i=0;
-
     function flashTimer() {           
         if (flasher == 1 && seconds>=0) {
             if (seconds<=60){
             christmas();
-            i++
+            i++;
         }
         if (i>=14){
             num = [Math.floor(Math.random() * numbersArr.length) +1];
-            flasher==0
+            flasher==0;
             for (let btn of buttonClassesArray) {
                 $(btn).css('background-color', 'lightsteelblue')
             }
             buttonLight(); 
-            clearInterval(flashInt)
+            clearInterval(flashInt);
         }};
         }
-
     if (seconds !== 0) {
     $(".score").text(score)
     let element = document.getElementById("myprogressBar");
     num = [Math.floor(Math.random() * numbersArr.length) +1];
 
     function buttonLight(){       
-        $("."+num).css('background-color', 'white')
+        $("."+num).css('background-color', 'white');
         $("."+num).on("click", function() { 
-            console.log($(this).text())
+            // console.log($(this).text())
             if (num==$(this).text() && seconds>=0){ 
                 isCorrect=true
-                var kRand = Math.floor(Math.random() * 2)
+                var kRand = Math.floor(Math.random() * 2);
                 if (kRand == 0){k1.play();}
                 if (kRand == 1){k2.play();}
                 if (kRand == 2){k3.play();}                  
-            $("."+num).css('background-color', 'lightsteelblue')
+            $("."+num).css('background-color', 'lightsteelblue');
             score+=1.23;
             if (score<=100){
             element.style.width = score + "%"; }
